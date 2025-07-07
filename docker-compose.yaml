@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  db_blog:
+    container_name: db_blog
+    image: mysql:8.4.0-oraclelinux8
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"
+    volumes:
+      - data_db_blog:/var/lib/mysql
+
+volumes:
+  data_db_blog:
+    name: data_db_blog
